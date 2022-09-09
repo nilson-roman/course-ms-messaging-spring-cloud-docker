@@ -8,9 +8,9 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:11
 
-ARG eurekapass
+ARG EUREKAPASS_ARG
 
-ENV EUREKAPASS $eurekapass
+ENV EUREKAPASS $EUREKAPASS_ARG
 
 WORKDIR /app
 
