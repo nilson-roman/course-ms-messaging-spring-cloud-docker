@@ -6,7 +6,7 @@ COPY . .
 
 RUN mvn clean package -DskipTests
 
-FROM openjdk:11
+FROM openjdk:17
 
 ARG EUREKAPASS_ARG
 
@@ -21,4 +21,4 @@ WORKDIR /app
 
 COPY --from=build ./app/target/*.jar ./app.jar
 
-ENTRYPOINT java -jar app.jar
+ENTRYPOINT java -jar -Dspring.profiles.active=prod app.jar

@@ -6,7 +6,7 @@ COPY . .
 
 RUN mvn clean package -DskipTests
 
-FROM openjdk:11
+FROM openjdk:17
 
 ARG EUREKAPASS_ARG
 
